@@ -1,4 +1,4 @@
-from flask import Flask,render_template
+from flask import Flask,render_template, send_from_directory
 from flask.ext.mysql import MySQL
 
 app = Flask(__name__)
@@ -27,6 +27,16 @@ def leaderboard():
   cur.close()
   con.close()
   return render_template('leaderboard.html',data=data)
+
+@app.route('/download/')
+def download():
+  try:
+    return send_file("/var/www/funtastic.ml/static/funtastic.apk", attachment_filename='funtastic.apk')
+  except Exception as e:
+    return str(e)
+    
+  
+  
   
 
 @app.route('/<hash>/<teamnum>/<level>/')
