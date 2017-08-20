@@ -1,0 +1,8 @@
+[Sun Aug 20 15:30:11.119682 2017] [wsgi:error] [pid 16831] /var/www/funtastic.ml/funtastic.py:2: ExtDeprecationWarning: Importing flask.ext.mysql is deprecated, use flask_mysql instead.
+[Sun Aug 20 15:30:11.119722 2017] [wsgi:error] [pid 16831]   from flask.ext.mysql import MySQL
+[Sun Aug 20 15:30:11.126942 2017] [wsgi:error] [pid 16831] /usr/local/lib/python2.7/dist-packages/flask/exthook.py:106: ExtDeprecationWarning: Detected extension named flaskext.mysql, please rename it to flask_mysql. The old form is deprecated.
+[Sun Aug 20 15:30:11.126954 2017] [wsgi:error] [pid 16831]   .format(x=modname), ExtDeprecationWarning
+[Sun Aug 20 15:42:10.614436 2017] [wsgi:error] [pid 1652] /var/www/funtastic.ml/funtastic.py:2: ExtDeprecationWarning: Importing flask.ext.mysql is deprecated, use flask_mysql instead.
+[Sun Aug 20 15:42:10.614469 2017] [wsgi:error] [pid 1652]   from flask.ext.mysql import MySQL
+[Sun Aug 20 15:42:10.638811 2017] [wsgi:error] [pid 1652] /usr/local/lib/python2.7/dist-packages/flask/exthook.py:106: ExtDeprecationWarning: Detected extension named flaskext.mysql, please rename it to flask_mysql. The old form is deprecated.
+[Sun Aug 20 15:42:10.638823 2017] [wsgi:error] [pid 1652]   .format(x=modname), ExtDeprecationWarning
