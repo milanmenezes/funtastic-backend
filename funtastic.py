@@ -17,6 +17,18 @@ mysql.init_app(app)
 def index():
 	return "Index page"
 
+@app.route('/leaderboard/')
+def leaderboard():
+  con = mysql.connect()
+  with con:
+      cur = con.cursor()
+      cur.execute("select * from leaderboard where level>0 order by level desc;")
+      data=cur.fetchall()
+  cur.close()
+  con.close()
+  return render_template('leaderboard.html',data=data)
+  
+
 @app.route('/<hash>/<teamnum>/<level>/')
 def test(hash,teamnum,level):
 	if hash=="827ccb0eea8a706c4c34a16891f84e7b":
