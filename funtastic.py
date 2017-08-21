@@ -45,9 +45,9 @@ def test(hash,teamnum,level):
 		con=mysql.connect()
 		with con:
 			cur = con.cursor()
-			cur.execute("UPDATE leaderboard set level="+str(level)+" WHERE teamnumber= "+str(teamnum)+" ;")
-      cur.execute("UPDATE leaderboard set utime=now() WHERE teamnumber= "+str(teamnum)+" ;")
-   		cur.close()
+			cur.execute("UPDATE leaderboard set level="+str(level)+" WHERE teamnumber= "+str(teamnum)+" ;"+ "UPDATE leaderboard set utime=now() WHERE teamnumber= "+str(teamnum)+" ;")
+      # cur.execute("UPDATE leaderboard set utime=now() WHERE teamnumber= "+str(teamnum)+" ;")
+   		cur.close() 
    		con.close()
    		return "Updated"
    	else: return "DB error"
