@@ -22,7 +22,7 @@ def leaderboard():
   con = mysql.connect()
   with con:
       cur = con.cursor()
-      cur.execute("select * from (select * from leaderboard where level>0 order by level desc) a order by utime;")
+      cur.execute("select * from leaderboard where level>0 order by level desc;")
       data=cur.fetchall()
   cur.close()
   con.close()
