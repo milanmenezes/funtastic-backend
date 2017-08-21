@@ -46,6 +46,7 @@ def test(hash,teamnum,level):
 		with con:
 			cur = con.cursor()
 			cur.execute("UPDATE leaderboard set level="+str(level)+" WHERE teamnumber= "+str(teamnum)+" ;")
+      cur.execute("UPDATE leaderboard set utime=now() WHERE teamnumber= "+str(teamnum)+" ;")
    		cur.close()
    		con.close()
    		return "Updated"
@@ -63,10 +64,10 @@ def finit():
     with con:
         cur = con.cursor()
         cur.execute("DROP TABLE IF EXISTS leaderboard")
-        cur.execute("CREATE TABLE leaderboard (teamnumber INTEGER PRIMARY KEY, level INTEGER)")
+        cur.execute("CREATE TABLE leaderboard (teamnumber INTEGER PRIMARY KEY, level INTEGER, utime timestamp)")
 
         for x in range(1,51):
-            cur.execute("INSERT INTO leaderboard (teamnumber, level) VALUES ("+str(x)+", 0 "+")")
+            cur.execute("INSERT INTO leaderboard (teamnumber, level, utime) VALUES ("+str(x)+", 0, now())")
 
     cur.close()
     con.close()
