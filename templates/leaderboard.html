@@ -34,6 +34,7 @@
     	<th class=" text-center">Rank</th>
         <th class=" text-center">Team</th>
         <th class=" text-center">Level</th>
+        <th class="text-center">Time</th>
     </tr>
     {%  for x in data %}
     
@@ -41,6 +42,7 @@
     	<td> {{loop.index}}</td>
         <td>{{ x[0] }}</td>
         <td>{{ x[1] }}</td>
+        <td>{{ x[2] }}</td>
     </tr>
     {% endfor %}
 </table>

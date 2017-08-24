@@ -22,7 +22,7 @@ def leaderboard():
   con = mysql.connect()
   with con:
       cur = con.cursor()
-      cur.execute("select * from leaderboard where level>0 order by level desc;")
+      cur.execute("select teamnumber as t,level, timestampdiff(second, (select utime from leaderboard where level = 0 group by level), (select utime from leaderboard where teamnumber=t) ) as time from leaderboard where level>0 order by level desc,time;")
       data=cur.fetchall()
   cur.close()
   con.close()
